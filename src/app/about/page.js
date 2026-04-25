@@ -1,55 +1,31 @@
+import Image from "next/image";
+
 const page = () => {
   return (
-    <div className="min-h-screen bg-base-200">
-      <div className="hero bg-base-200 py-6">
-        <div className="hero-content text-center">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold mb-6">About Odyssey Events</h1>
-            <p className="text-lg text-gray-600">
-              Your premier destination for discovering and hosting extraordinary
-              events across Bangladesh
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-6">
-        <div className="max-w-3xl mx-auto mb-6">
-          <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-          <p className="text-gray-600 mb-6">
-            At Odyssey Events, we believe in creating memorable experiences that
-            bring people together. Whether you&apos;re looking to attend
-            corporate summits, music festivals, cultural gatherings, or private
-            celebrations, we&apos;re here to help you discover and book your
-            next unforgettable experience.
+    <div className="hero bg-base-200 min-h-screen">
+      <div className="hero-content flex-col lg:flex-row">
+        <Image
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800"
+          alt="About Odyssey Events"
+          width={400}
+          height={300}
+          className="max-w-sm rounded-lg shadow-2xl"
+        />
+        <div>
+          <h1 className="text-5xl font-bold">About Odyssey Events</h1>
+          <p className="py-6">
+            Your premier destination for discovering and hosting extraordinary
+            events across Bangladesh. From corporate summits to music festivals,
+            find and book your next unforgettable experience with us.
           </p>
-          <h2 className="text-3xl font-bold mb-4">What We Offer</h2>
-          <ul className="list-disc list-inside text-gray-600 space-y-2">
-            <li>Curated event listings across Bangladesh</li>
-            <li>Easy booking and ticket management</li>
-            <li>Event hosting solutions for organizers</li>
-            <li>Real-time event updates and notifications</li>
-          </ul>
-        </div>
-
-        <div className="card bg-base-100 shadow-xl max-w-3xl mx-auto">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1200"
-              alt="Event venue"
-              className="rounded-xl w-full h-64 object-cover"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title text-3xl">Join Our Community</h2>
-            <p className="text-gray-600 max-w-2xl">
-              Be part of Bangladesh&apos;s growing event community. Connect with
-              organizers, discover new experiences, and create lasting memories.
-            </p>
-            <div className="card-actions justify-end mt-4">
-              <button className="btn btn-primary">Get Started</button>
-            </div>
-          </div>
+          <p className="mb-8">
+            Discover. Experience. Host. Odyssey Events is Bangladesh's leading
+            marketplace for world-class experiences. Whether you are looking to
+            network at a tech conference, lose yourself in a concert, or
+            organize your own large-scale festival, we provide the tools and the
+            stage. Explore curated events across the nation and transform your
+            weekends into a series of unforgettable memories.
+          </p>
         </div>
       </div>
     </div>
