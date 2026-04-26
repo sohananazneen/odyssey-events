@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import eventsData from "../../data/eventsData";
 
 const FeaturedEvents = () => {
@@ -33,9 +34,12 @@ const FeaturedEvents = () => {
                     <span className="badge badge-primary">
                       {event.additional_info.category}
                     </span>
-                    <button className="btn btn-sm btn-outline">
+                    <Link
+                      href={`/events/${event.id}`}
+                      className="btn btn-sm btn-outline"
+                    >
                       View Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
