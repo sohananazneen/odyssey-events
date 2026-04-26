@@ -99,25 +99,35 @@ const eventsData = [
 
   {
     id: 5,
-    title: "Fashion Show 2026",
+    title: "Art & Craft Exhibition",
     image_url:
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1771364891727-d24ea1973f18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QXJ0JTIwJTI2JTIwQ3JhZnQlMjBFeGhpYml0aW9uJTIwZXZlbnR8ZW58MHx8MHx8fDA%3D",
     short_description:
-      "Showcasing the intersection of traditional heritage and modern couture.",
+      "Celebrating the creativity of local artisans and contemporary painters.",
+
     full_description:
-      "Style Studio presents the latest seasonal collections from the most influential designers in the country. A night dedicated to glamour, trends, and artistic expression on the runway.",
+      "Explore a curated collection of paintings, sculptures, and handmade crafts. This exhibition aims to provide a platform for emerging artists to sell their work directly to collectors.",
+
     specifications: {
-      seating: "VIP Front Row & General",
-      runway_length: "50ft",
-      models: "30+",
-      media_partners: "Vogue BD",
+      artwork_count: "200+",
+
+      workshops: "Pottery & Canvas",
+
+      sale_commission: "0% for Artists",
+
+      vibe: "Quiet/Inspirational",
     },
+
     additional_info: {
-      price: 60,
-      date: "2026-10-12",
-      category: "Fashion",
-      location: "Dhaka",
-      organizer: "Style Studio",
+      price: 15,
+
+      date: "2026-06-25",
+
+      category: "Exhibition",
+
+      location: "Barisal",
+
+      organizer: "Creative Minds",
     },
     related_items: [8],
   },
