@@ -1,4 +1,4 @@
-# Odyssey Events (https://odyssey-events-chi.vercel.app)
+# [Odyssey Events] (https://odyssey-events-chi.vercel.app)
 
 A modern event management platform built with Next.js that allows users to discover, browse, and manage various types of events across Bangladesh. The platform features a comprehensive event catalog with detailed information, specifications, and booking capabilities.
 
@@ -112,4 +112,4 @@ odyssey-events/
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Live Link: [Odyssey Events](https://odyssey-events-chi.vercel.app)
+Live Link: Odyssey Events(https://odyssey-events-chi.vercel.app)
