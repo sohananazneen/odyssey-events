@@ -1,134 +1,223 @@
-[
+const eventsData = [
   {
     id: 1,
-    event_name: "Corporate Leadership Summit",
-    type: "Corporate",
-    date: "2026-06-15",
-    location: "Dhaka",
-    organizer: "Elite Events Ltd",
-    attendees: 150,
-    budget_usd: 12000,
-    image_url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
+    title: "Corporate Leadership Summit",
+    image_url:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop",
+    short_description:
+      "A premier gathering of industry executives focusing on 2026's economic landscape.",
+    full_description:
+      "The Corporate Leadership Summit brings together CEOs, managers, and entrepreneurs from across Bangladesh to discuss digital transformation and sustainable growth strategies. Featuring keynote speakers from global tech giants and networking gala dinners.",
+    specifications: {
+      duration: "8 Hours",
+      venue_capacity: "200",
+      includes: ["Lunch", "Digital Materials", "Networking Access"],
+      dress_code: "Business Professional",
+    },
+    additional_info: {
+      price: 150,
+      date: "2026-06-15",
+      category: "Corporate",
+      location: "Dhaka",
+      organizer: "Elite Events Ltd",
+    },
+    related_items: [3, 4],
   },
   {
     id: 2,
-    event_name: "Wedding Ceremony of A & S",
-    type: "Wedding",
-    date: "2026-07-02",
-    location: "Chattogram",
-    organizer: "Dream Planners",
-    attendees: 300,
-    budget_usd: 20000,
-    image_url: "https://images.unsplash.com/photo-1529636798458-92182e662485",
+    title: "Wedding Ceremony of A & S",
+    image_url:
+      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    short_description:
+      "An elegant and traditional celebration of love in the heart of Chattogram.",
+    full_description:
+      "Experience the grandeur of a traditional Bangladeshi wedding. From the floral decorations to the gourmet multi-course feast, every detail is crafted by Dream Planners to ensure a memorable night for the couple and guests.",
+    specifications: {
+      duration: "6 Hours",
+      parking: "Valet Available",
+      cuisine: "Traditional Bengali & Mughal",
+      guest_limit: "300",
+    },
+    additional_info: {
+      price: 0,
+      date: "2026-07-02",
+      category: "Wedding",
+      location: "Chattogram",
+      organizer: "Dream Planners",
+    },
+    related_items: [5],
   },
   {
     id: 3,
-    event_name: "Tech Expo 2026",
-    type: "Exhibition",
-    date: "2026-08-10",
-    location: "Dhaka",
-    organizer: "Innovate BD",
-    attendees: 500,
-    budget_usd: 35000,
-    image_url: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    title: "Tech Expo 2026",
+    image_url:
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop",
+    short_description:
+      "Exploring the next frontier of AI and Robotics in South Asia.",
+    full_description:
+      "The largest tech exhibition in Bangladesh, showcasing cutting-edge hardware, software solutions, and AI-driven robotics. Meet the innovators shaping our future in this three-day immersive event.",
+    specifications: {
+      wifi: "Complimentary High-Speed",
+      exhibitors: "50+",
+      keynote_sessions: "12",
+      entry_type: "Digital Pass",
+    },
+    additional_info: {
+      price: 25,
+      date: "2026-08-10",
+      category: "Exhibition",
+      location: "Dhaka",
+      organizer: "Innovate BD",
+    },
+    related_items: [1, 4],
   },
+
   {
     id: 4,
-    event_name: "Music Fiesta",
-    type: "Concert",
-    date: "2026-09-05",
-    location: "Sylhet",
-    organizer: "SoundWave",
-    attendees: 800,
-    budget_usd: 50000,
-    image_url: "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2",
+    title: "Startup Pitch Day",
+    image_url:
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=2070&auto=format&fit=crop",
+    short_description:
+      "Connecting promising startups with venture capitalists and angel investors.",
+    full_description:
+      "Watch the next big thing happen live. 20 selected startups will pitch their business models to a panel of international investors. Includes a networking brunch and one-on-one mentor sessions.",
+    specifications: {
+      format: "Hybrid (In-person & Virtual)",
+      prizes: "$10k Grant",
+      pitch_time: "5 Mins per Startup",
+      investors: "15 Panels",
+    },
+    additional_info: {
+      price: 75,
+      date: "2026-05-20",
+      category: "Business",
+      location: "Dhaka",
+      organizer: "Startup Hub BD",
+    },
+    related_items: [1, 3],
   },
+
   {
     id: 5,
-    event_name: "Startup Pitch Day",
-    type: "Business",
-    date: "2026-05-20",
-    location: "Dhaka",
-    organizer: "Startup Hub BD",
-    attendees: 120,
-    budget_usd: 8000,
-    image_url: "https://images.unsplash.com/photo-1556761175-b413da4baf72",
+    title: "Fashion Show 2026",
+    image_url:
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop",
+    short_description:
+      "Showcasing the intersection of traditional heritage and modern couture.",
+    full_description:
+      "Style Studio presents the latest seasonal collections from the most influential designers in the country. A night dedicated to glamour, trends, and artistic expression on the runway.",
+    specifications: {
+      seating: "VIP Front Row & General",
+      runway_length: "50ft",
+      models: "30+",
+      media_partners: "Vogue BD",
+    },
+    additional_info: {
+      price: 60,
+      date: "2026-10-12",
+      category: "Fashion",
+      location: "Dhaka",
+      organizer: "Style Studio",
+    },
+    related_items: [8],
   },
   {
     id: 6,
-    event_name: "Birthday Bash - Rafi",
-    type: "Private",
-    date: "2026-04-30",
-    location: "Khulna",
-    organizer: "Party Makers",
-    attendees: 50,
-    budget_usd: 2000,
-    image_url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d",
+    title: "Charity Gala Night",
+    image_url:
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2070&auto=format&fit=crop",
+    short_description:
+      "A fundraising evening dedicated to supporting rural education programs.",
+    full_description:
+      "Join the Hope Foundation for an evening of silent auctions and live performances. All proceeds from the ticket sales and auctions will go directly towards building schools in remote areas.",
+    specifications: {
+      donations: "Tax-Deductible",
+      auction_items: "25 Unique Pieces",
+      entertainment: "Live Orchestra",
+      dinner: "Full Formal Service",
+    },
+    additional_info: {
+      price: 100,
+      date: "2026-11-18",
+      category: "Charity",
+      location: "Rajshahi",
+      organizer: "Hope Foundation",
+    },
+    related_items: [1, 8],
   },
   {
     id: 7,
-    event_name: "Fashion Show 2026",
-    type: "Fashion",
-    date: "2026-10-12",
-    location: "Dhaka",
-    organizer: "Style Studio",
-    attendees: 400,
-    budget_usd: 25000,
-    image_url: "https://images.unsplash.com/photo-1495121605193-b116b5b09a11",
+    title: "Food Festival",
+    image_url:
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop",
+    short_description:
+      "Taste the flavors of the world at the beautiful Cox's Bazar beach.",
+    full_description:
+      "Over 100 stalls featuring international cuisines, local street food delights, and live cooking demonstrations by celebrity chefs. The perfect weekend for foodies by the sea.",
+    specifications: {
+      stalls: "100+",
+      entry: "Free (Pay-per-dish)",
+      highlights: "Seafood Special",
+      family_friendly: "Yes, Kids Zone included",
+    },
+    additional_info: {
+      price: 0,
+      date: "2026-12-05",
+      category: "Festival",
+      location: "Cox's Bazar",
+      organizer: "Taste BD",
+    },
+    related_items: [4, 9],
   },
+
   {
     id: 8,
-    event_name: "Charity Gala Night",
-    type: "Charity",
-    date: "2026-11-18",
-    location: "Rajshahi",
-    organizer: "Hope Foundation",
-    attendees: 200,
-    budget_usd: 15000,
-    image_url: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a",
+    title: "Sports Tournament",
+    image_url:
+      "https://plus.unsplash.com/premium_photo-1685048594731-e01b08fcc07b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgxfHxzcG9ydHMlMjBldmVudHxlbnwwfHwwfHx8MA%3D%3D",
+    short_description:
+      "Inter-district championship featuring Cricket, Football, and Badminton.",
+    full_description:
+      "The Active Youth sports meet brings together the best amateur athletes for a week of competitive sports. Promoting health, teamwork, and district pride.",
+    specifications: {
+      sports: ["Cricket", "Football", "Badminton"],
+      teams: "24",
+      trophy: "Champions Cup 2026",
+      medical: "First Aid Crew On-site",
+    },
+    additional_info: {
+      price: 10,
+      date: "2026-07-30",
+      category: "Sports",
+      location: "Rangpur",
+      organizer: "Active Youth",
+    },
+    related_items: [4],
   },
   {
     id: 9,
-    event_name: "Food Festival",
-    type: "Festival",
-    date: "2026-12-05",
-    location: "Cox's Bazar",
-    organizer: "Taste BD",
-    attendees: 1000,
-    budget_usd: 40000,
-    image_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-  },
-  {
-    id: 10,
-    event_name: "Art & Craft Exhibition",
-    type: "Exhibition",
-    date: "2026-06-25",
-    location: "Barisal",
-    organizer: "Creative Minds",
-    attendees: 180,
-    budget_usd: 9000,
-    image_url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-  },
-  {
-    id: 11,
-    event_name: "Sports Tournament",
-    type: "Sports",
-    date: "2026-07-30",
-    location: "Rangpur",
-    organizer: "Active Youth",
-    attendees: 600,
-    budget_usd: 22000,
-    image_url: "https://images.unsplash.com/photo-1517649763962-0c623066013b",
-  },
-  {
-    id: 12,
-    event_name: "New Year Celebration",
-    type: "Festival",
-    date: "2026-12-31",
-    location: "Dhaka",
-    organizer: "City Events",
-    attendees: 1200,
-    budget_usd: 60000,
-    image_url: "https://images.unsplash.com/photo-1482517967863-00e15c9b44be",
+    title: "New Year Celebration",
+    image_url:
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop",
+    short_description:
+      "Count down to 2027 with fireworks, food, and high-energy music.",
+    full_description:
+      "The grandest New Year's Eve event in Dhaka. Featuring a midnight fireworks show, a gala dinner, and performances by top-tier musical acts to welcome the new year in style.",
+    specifications: {
+      fireworks: "15 Min Show",
+      dinner_type: "Grand Buffet",
+      beverages: "Included",
+      vibe: "Celebratory/Festive",
+    },
+    additional_info: {
+      price: 120,
+      date: "2026-12-31",
+      category: "Festival",
+      location: "Dhaka",
+      organizer: "City Events",
+    },
+    related_items: [4, 7],
   },
 ];
+
+export default eventsData;
