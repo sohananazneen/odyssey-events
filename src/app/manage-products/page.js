@@ -1,0 +1,206 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useAuth } from "../lib/AuthContext";
+import eventsData from "../../data/eventsData";
+
+export default function ManageProductsPage() {
+  const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const [products, setProducts] = useState(eventsData);
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push("/login");
+    }
+  }, [user, authLoading, router]);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-base-200">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null;
+  }
+
+  const handleView = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const getPriorityBadge = (priority) => {
+    const colors = {
+      low: "badge-success",
+      medium: "badge-warning",
+      high: "badge-error",
+    };
+    return colors[priority] || "badge-neutral";
+  };
+
+  return (
+    <div className="min-h-screen bg-base-200 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-extrabold text-base-content">
+              Manage Products
+            </h1>
+            <p className="mt-2 text-base-content/70">
+              View and manage your event products
+            </p>
+          </div>
+          <Link href="/add-product" className="btn btn-primary">
+            Add New Product
+          </Link>
+        </div>
+
+        {products.length === 0 ? (
+          <div className="card bg-base-100 shadow-xl">
+            <div className="card-body text-center">
+              <h3 className="text-lg font-semibold">No products yet</h3>
+              <p className="text-base-content/70">
+                Create your first product to get started
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="overflow-x-auto bg-base-100 shadow-xl rounded-lg">
+            <table className="table table-zebra w-full">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product) => (
+                  <tr key={product.id}>
+                    <td>
+                      <div className="avatar">
+                        <div className="w-12 h-12 rounded">
+                          <img
+                            src={
+                              product.image_url ||
+                              "https://via.placeholder.com/48"
+                            }
+                            alt={product.title}
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="font-semibold">{product.title}</div>
+                      <div className="text-xs text-base-content/60">
+                        {product.short_description}
+                      </div>
+                    </td>
+                    <td>
+                      <span className="badge badge-ghost">
+                        {product.additional_info?.category || "N/A"}
+                      </span>
+                    </td>
+                    <td className="font-bold">
+                      {product.additional_info?.price !== undefined
+                        ? `$${product.additional_info.price.toFixed(2)}`
+                        : "N/A"}
+                    </td>
+                    <td>{product.additional_info?.date || "N/A"}</td>
+                    <td>{product.additional_info?.location || "N/A"}</td>
+                    <td>
+                      <div className="flex gap-2">
+                        <button
+                          className="btn btn-sm btn-info"
+                          onClick={() => handleView(product)}
+                        >
+                          View
+                        </button>
+                        <button className="btn btn-sm btn-error">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {/* View Modal */}
+        {selectedProduct && (
+          <dialog className="modal modal-open">
+            <div className="modal-box max-w-2xl">
+              <h3 className="font-bold text-lg mb-4">
+                {selectedProduct.title}
+              </h3>
+              <div className="space-y-4">
+                {selectedProduct.image_url && (
+                  <img
+                    src={selectedProduct.image_url}
+                    alt={selectedProduct.title}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                )}
+                <div>
+                  <span className="font-semibold">Short Description:</span>
+                  <p className="text-sm">{selectedProduct.short_description}</p>
+                </div>
+                <div>
+                  <span className="font-semibold">Full Description:</span>
+                  <p className="text-sm">{selectedProduct.full_description}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <span className="font-semibold">Price:</span>
+                    <p className="text-lg font-bold">
+                      {selectedProduct.additional_info?.price !== undefined
+                        ? `$${selectedProduct.additional_info.price.toFixed(2)}`
+                        : "N/A"}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Date:</span>
+                    <p>{selectedProduct.additional_info?.date || "N/A"}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Category:</span>
+                    <p>{selectedProduct.additional_info?.category || "N/A"}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Location:</span>
+                    <p>{selectedProduct.additional_info?.location || "N/A"}</p>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Organizer:</span>
+                    <p>{selectedProduct.additional_info?.organizer || "N/A"}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="modal-action">
+                <button
+                  className="btn"
+                  onClick={() => setSelectedProduct(null)}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+            <form method="dialog" className="modal-backdrop">
+              <button onClick={() => setSelectedProduct(null)}>close</button>
+            </form>
+          </dialog>
+        )}
+      </div>
+    </div>
+  );
+}

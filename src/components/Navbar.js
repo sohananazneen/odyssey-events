@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useAuth } from "../app/lib/AuthContext";
 
 const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { user, logout } = useAuth();
 
   return (
     <div className="navbar bg-base-100 shadow-lg sticky top-0 z-50">
@@ -71,7 +72,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-2">
-        {isLoggedIn ? (
+        {user ? (
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -89,13 +90,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li className="menu-title">Logged in as</li>
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
+              <li className="menu-title">{user.email}</li>
               <li>
                 <Link href="/add-product">Add Product</Link>
               </li>
@@ -104,7 +99,7 @@ const Navbar = () => {
               </li>
               <div className="divider my-0"></div>
               <li>
-                <a onClick={() => setIsLoggedIn(false)}>Logout</a>
+                <a onClick={logout}>Logout</a>
               </li>
             </ul>
           </div>
