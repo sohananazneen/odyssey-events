@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import eventsData from "@/data/eventsData";
+import eventsData from "../../../data/eventsData";
 
 export async function generateStaticParams() {
   return eventsData.map((event) => ({

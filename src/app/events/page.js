@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import eventsData from "@/data/eventsData";
+import eventsData from "../../data/eventsData";
 
 export default function EventsPage() {
   const [searchQuery, setSearchQuery] = useState("");
