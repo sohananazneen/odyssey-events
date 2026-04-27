@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "../lib/AuthContext";
 import { toast } from "react-toastify";
 
-export default function AddProductPage() {
+export default function AddEventPage() {
   const router = useRouter();
   const { user, loading: authLoading } = useAuth();
   const [formData, setFormData] = useState({
@@ -48,7 +48,7 @@ export default function AddProductPage() {
   };
 
   const handleSubmit = async (e) => {
-    toast("Product Added Successfully!");
+    toast("Event Added Successfully!");
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -61,13 +61,13 @@ export default function AddProductPage() {
     }
 
     try {
-      console.log("Product data:", formData);
+      console.log("Event data:", formData);
       setSuccess(true);
       setTimeout(() => {
-        router.push("/manage-products");
+        router.push("/manage-events");
       }, 2000);
     } catch (err) {
-      setError(err.message || "Failed to add product");
+      setError(err.message || "Failed to add Event");
     } finally {
       setLoading(false);
     }
@@ -78,10 +78,10 @@ export default function AddProductPage() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-base-content">
-            Add New Product
+            Add New Event
           </h2>
           <p className="mt-2 text-sm text-base-content/70">
-            Create a new product for your event
+            Create a new Event
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function AddProductPage() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span>Product added successfully! Redirecting...</span>
+                  <span>Event added successfully! Redirecting...</span>
                 </div>
               )}
 

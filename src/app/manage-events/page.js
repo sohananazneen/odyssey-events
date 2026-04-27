@@ -6,12 +6,12 @@ import Link from "next/link";
 import { useAuth } from "../lib/AuthContext";
 import eventsData from "../../data/eventsData";
 
-export default function ManageProductsPage() {
+export default function ManageEventsPage() {
   const router = useRouter();
   const { user, loading: authLoading } = useAuth();
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const [products, setProducts] = useState(eventsData);
+  const [Events, setEvents] = useState(eventsData);
   useEffect(() => {
     if (!authLoading && !user) {
       router.push("/login");
@@ -30,8 +30,8 @@ export default function ManageProductsPage() {
     return null;
   }
 
-  const handleView = (product) => {
-    setSelectedProduct(product);
+  const handleView = (Event) => {
+    setSelectedEvent(Event);
   };
 
   const getPriorityBadge = (priority) => {
@@ -49,23 +49,23 @@ export default function ManageProductsPage() {
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-extrabold text-base-content">
-              Manage Products
+              Manage Events
             </h1>
             <p className="mt-2 text-base-content/70">
-              View and manage your event products
+              View and manage your Events
             </p>
           </div>
-          <Link href="/add-product" className="btn btn-primary">
-            Add New Product
+          <Link href="/add-Event" className="btn btn-primary">
+            Add New Event
           </Link>
         </div>
 
-        {products.length === 0 ? (
+        {Events.length === 0 ? (
           <div className="card bg-base-100 shadow-xl">
             <div className="card-body text-center">
-              <h3 className="text-lg font-semibold">No products yet</h3>
+              <h3 className="text-lg font-semibold">No Events yet</h3>
               <p className="text-base-content/70">
-                Create your first product to get started
+                Create your first Event to get started
               </p>
             </div>
           </div>
@@ -84,45 +84,45 @@ export default function ManageProductsPage() {
                 </tr>
               </thead>
               <tbody>
-                {products.map((product) => (
-                  <tr key={product.id}>
+                {Events.map((Event) => (
+                  <tr key={Event.id}>
                     <td>
                       <div className="avatar">
                         <div className="w-12 h-12 rounded">
                           <img
                             src={
-                              product.image_url ||
+                              Event.image_url ||
                               "https://via.placeholder.com/48"
                             }
-                            alt={product.title}
+                            alt={Event.title}
                             className="object-cover"
                           />
                         </div>
                       </div>
                     </td>
                     <td>
-                      <div className="font-semibold">{product.title}</div>
+                      <div className="font-semibold">{Event.title}</div>
                       <div className="text-xs text-base-content/60">
-                        {product.short_description}
+                        {Event.short_description}
                       </div>
                     </td>
                     <td>
                       <span className="badge badge-ghost">
-                        {product.additional_info?.category || "N/A"}
+                        {Event.additional_info?.category || "N/A"}
                       </span>
                     </td>
                     <td className="font-bold">
-                      {product.additional_info?.price !== undefined
-                        ? `$${product.additional_info.price.toFixed(2)}`
+                      {Event.additional_info?.price !== undefined
+                        ? `$${Event.additional_info.price.toFixed(2)}`
                         : "N/A"}
                     </td>
-                    <td>{product.additional_info?.date || "N/A"}</td>
-                    <td>{product.additional_info?.location || "N/A"}</td>
+                    <td>{Event.additional_info?.date || "N/A"}</td>
+                    <td>{Event.additional_info?.location || "N/A"}</td>
                     <td>
                       <div className="flex gap-2">
                         <button
                           className="btn btn-sm btn-info"
-                          onClick={() => handleView(product)}
+                          onClick={() => handleView(Event)}
                         >
                           View
                         </button>
@@ -137,66 +137,61 @@ export default function ManageProductsPage() {
         )}
 
         {/* View Modal */}
-        {selectedProduct && (
+        {selectedEvent && (
           <dialog className="modal modal-open">
             <div className="modal-box max-w-2xl">
-              <h3 className="font-bold text-lg mb-4">
-                {selectedProduct.title}
-              </h3>
+              <h3 className="font-bold text-lg mb-4">{selectedEvent.title}</h3>
               <div className="space-y-4">
-                {selectedProduct.image_url && (
+                {selectedEvent.image_url && (
                   <img
-                    src={selectedProduct.image_url}
-                    alt={selectedProduct.title}
+                    src={selectedEvent.image_url}
+                    alt={selectedEvent.title}
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 )}
                 <div>
                   <span className="font-semibold">Short Description:</span>
-                  <p className="text-sm">{selectedProduct.short_description}</p>
+                  <p className="text-sm">{selectedEvent.short_description}</p>
                 </div>
                 <div>
                   <span className="font-semibold">Full Description:</span>
-                  <p className="text-sm">{selectedProduct.full_description}</p>
+                  <p className="text-sm">{selectedEvent.full_description}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <span className="font-semibold">Price:</span>
                     <p className="text-lg font-bold">
-                      {selectedProduct.additional_info?.price !== undefined
-                        ? `$${selectedProduct.additional_info.price.toFixed(2)}`
+                      {selectedEvent.additional_info?.price !== undefined
+                        ? `$${selectedEvent.additional_info.price.toFixed(2)}`
                         : "N/A"}
                     </p>
                   </div>
                   <div>
                     <span className="font-semibold">Date:</span>
-                    <p>{selectedProduct.additional_info?.date || "N/A"}</p>
+                    <p>{selectedEvent.additional_info?.date || "N/A"}</p>
                   </div>
                   <div>
                     <span className="font-semibold">Category:</span>
-                    <p>{selectedProduct.additional_info?.category || "N/A"}</p>
+                    <p>{selectedEvent.additional_info?.category || "N/A"}</p>
                   </div>
                   <div>
                     <span className="font-semibold">Location:</span>
-                    <p>{selectedProduct.additional_info?.location || "N/A"}</p>
+                    <p>{selectedEvent.additional_info?.location || "N/A"}</p>
                   </div>
                   <div>
                     <span className="font-semibold">Organizer:</span>
-                    <p>{selectedProduct.additional_info?.organizer || "N/A"}</p>
+                    <p>{selectedEvent.additional_info?.organizer || "N/A"}</p>
                   </div>
                 </div>
               </div>
               <div className="modal-action">
-                <button
-                  className="btn"
-                  onClick={() => setSelectedProduct(null)}
-                >
+                <button className="btn" onClick={() => setSelectedEvent(null)}>
                   Close
                 </button>
               </div>
             </div>
             <form method="dialog" className="modal-backdrop">
-              <button onClick={() => setSelectedProduct(null)}>close</button>
+              <button onClick={() => setSelectedEvent(null)}>close</button>
             </form>
           </dialog>
         )}

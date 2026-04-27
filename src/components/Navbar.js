@@ -82,7 +82,7 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="User avatar"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  src="https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
                 />
               </div>
             </div>
@@ -92,10 +92,10 @@ const Navbar = () => {
             >
               <li className="menu-title">{user.email}</li>
               <li>
-                <Link href="/add-product">Add Product</Link>
+                <Link href="/add-event">Add Event</Link>
               </li>
               <li>
-                <Link href="/manage-products">Manage Products</Link>
+                <Link href="/manage-events">Manage Events</Link>
               </li>
               <div className="divider my-0"></div>
               <li>
