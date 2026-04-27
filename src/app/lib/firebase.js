@@ -15,4 +15,7 @@ const app =
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
+googleProvider.addScope("email");
+googleProvider.addScope("profile");
+
 export { auth, googleProvider };

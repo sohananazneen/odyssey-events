@@ -46,10 +46,17 @@ export const AuthProvider = ({ children }) => {
   };
   const loginWithGoogle = () => {
     if (!auth || !googleProvider) {
-      console.error("Firebase auth is not initialized");
+      console.error("Firebase auth is not initialized", {
+        auth,
+        googleProvider,
+      });
       return Promise.reject(new Error("Firebase auth is not initialized"));
     }
-    return signInWithPopup(auth, googleProvider);
+    console.log("Attempting Google sign-in...");
+    return signInWithPopup(auth, googleProvider).catch((error) => {
+      console.error("Google sign-in error:", error.code, error.message);
+      throw error;
+    });
   };
   const logout = () => {
     if (!auth) {
