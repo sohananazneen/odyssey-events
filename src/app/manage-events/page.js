@@ -55,7 +55,7 @@ export default function ManageEventsPage() {
               View and manage your Events
             </p>
           </div>
-          <Link href="/add-Event" className="btn btn-primary">
+          <Link href="/add-event" className="btn btn-primary">
             Add New Event
           </Link>
         </div>
