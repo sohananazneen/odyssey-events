@@ -1,115 +1,109 @@
-# [Odyssey Events](https://odyssey-events-chi.vercel.app)
+# 🎉 Odyssey Events
 
-A modern event management platform built with Next.js that allows users to discover, browse, and manage various types of events across Bangladesh. The platform features a comprehensive event catalog with detailed information, specifications, and booking capabilities.
+## 📌 Project Overview
 
-## Key Features
+Odyssey Events is a modern event management platform built with Next.js. It allows users to discover, explore, and manage different types of events across Bangladesh. The platform provides detailed event information, authentication, and a smooth user experience.
 
-- **Event Discovery**: Browse a diverse collection of events including corporate summits, weddings, tech expos, startup pitch days, art exhibitions, charity galas, food festivals, sports tournaments, and New Year celebrations
-- **Detailed Event Information**: Each event includes comprehensive details such as duration, venue capacity, pricing, specifications, and organizer information
-- **User Authentication**: Firebase-based authentication system with Google sign-in support
-- **Modern UI/UX**: Built with DaisyUI and TailwindCSS for a beautiful, responsive interface
-- **Dynamic Routing**: Next.js App Router with dynamic routes for individual event pages
-- **Toast Notifications**: React Toastify integration for user feedback and notifications
-- **Responsive Design**: Fully responsive layout optimized for all device sizes
+---
 
-## Setup & Installation
 
-### Prerequisites
+## 🔑 Demo Credentials
 
-- Node.js (v18 or higher)
-- npm, yarn, pnpm, or bun package manager
+Use the following credentials to test the application:
 
-### Installation Steps
+* 📧 Email: **[demo@odyssey.com](mailto:demo@odyssey.com)**
+* 🔒 Password: **123456**
 
-1. Clone the repository:
+> ⚠️ Note: You can also sign in using **Google Authentication**
 
-```bash
-git clone <repository-url>
+---
+
+## 🧰 Main Technology Stack
+
+* Next.js (App Router)
+* React.js
+* Tailwind CSS + DaisyUI
+* Firebase Authentication
+* React Toastify
+* JavaScript (ES6+)
+
+---
+
+## ✨ Main Features
+
+* 🎯 Browse various types of events (corporate, tech, wedding, sports, etc.)
+* 📄 View detailed event information (pricing, capacity, duration, organizer)
+* 🔐 User authentication with Firebase (Google Sign-in supported)
+* 🔔 Toast notifications for better user feedback
+* ⚡ Dynamic routing for individual event pages
+* 📱 Fully responsive design for all devices
+* 🛠️ Admin features to add and manage events
+
+---
+
+## 📦 Dependencies
+
+```bash id="qk9x2v"
+npm install next react react-dom
+npm install firebase
+npm install react-toastify
+```
+
+For styling:
+
+```bash id="u5cm2x"
+npm install -D tailwindcss postcss autoprefixer daisyui
+```
+
+---
+
+## ⚙️ How to Run Locally
+
+```bash id="a0x8jr"
+# Clone repository
+git clone YOUR_REPO_URL_HERE
+
+# Navigate to project
 cd odyssey-events
-```
 
-2. Install dependencies:
-
-```bash
+# Install dependencies
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
 
-3. Set up Firebase configuration:
-   - Create a Firebase project at [https://console.firebase.google.com/](https://console.firebase.google.com/)
-   - Enable Google Authentication in the Firebase console
-   - Copy your Firebase configuration values
-   - Create a `.env.local` file in the project root
-   - Add your Firebase credentials:
-
-4. Run the development server:
-
-```bash
+# Run server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 Visit: http://localhost:3000
 
-## Route Summary
+---
 
-- `/` - Homepage with hero section, features, featured events, testimonials, and CTA banner
-- `/about` - About page with project information
-- `/events` - Events listing page displaying all available events
-- `/events/[id]` - Individual event detail page with dynamic routing
-- `/add-product` - Add new event/product page (admin functionality)
-- `/manage-products` - Manage existing events/products (admin functionality)
-- `/blog` - Blog section for articles and updates
-- `/contact` - Contact page for user inquiries
-- `/login` - User login page with Firebase authentication
-- `/register` - User registration page
+## 🔐 Environment Setup (Firebase)
 
-## Tech Stack
+1. Go to https://console.firebase.google.com/
+2. Create a project
+3. Enable Google Authentication
+4. Create `.env.local` file
+5. Add:
 
-- **Framework**: Next.js 16.2.4 (App Router)
-- **UI Library**: React 19.2.4
-- **Styling**: TailwindCSS 4.2.4 with DaisyUI 5.5.19
-- **Authentication**: Firebase 12.12.1
-- **Notifications**: React Toastify 11.1.0
-- **Language**: JavaScript
-
-## Project Structure
-
-```
-odyssey-events/
-├── public/              # Static assets (SVG icons)
-├── src/
-│   ├── app/            # Next.js App Router pages
-│   │   ├── about/      # About page
-│   │   ├── add-product/ # Add event page
-│   │   ├── blog/       # Blog section
-│   │   ├── contact/    # Contact page
-│   │   ├── events/     # Events pages (list and detail)
-│   │   ├── login/      # Login page
-│   │   ├── register/   # Registration page
-│   │   └── manage-products/ # Event management page
-│   ├── components/     # Reusable React components
-│   │   ├── homepage/   # Homepage-specific components
-│   │   ├── Footer.js   # Footer component
-│   │   └── Navbar.js   # Navigation bar
-│   └── data/           # Data files
-│       └── eventsData.js # Event catalog data
-├── package.json        # Project dependencies
-└── next.config.mjs     # Next.js configuration
+```env id="u4h7rs"
+NEXT_PUBLIC_API_KEY=your_api_key
+NEXT_PUBLIC_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_PROJECT_ID=your_project_id
+NEXT_PUBLIC_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_APP_ID=your_app_id
 ```
 
-## Deployment
+---
 
-To deploy Next.js app used the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔗 Relevant Links
 
-Live Link: Odyssey Events-(https://odyssey-events-chi.vercel.app)
+* 🌐 Live Project: https://odyssey-events-chi.vercel.app
+* 📁 Repository: https://github.com/sohananazneen/odyssey-events.git
+
+---
+
+## 👩‍💻 Author
+
+**Sohana Nazneen**
+📧 [sohana.nazneen.1@gmail.com](mailto:sohana.nazneen.1@gmail.com)
