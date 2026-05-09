@@ -95,43 +95,43 @@ NEXT_PUBLIC_APP_ID=your_app_id
 
 ---
 
-## � Screenshots
+## 📸 Screenshots
 
 ### Homepage
 
-![Homepage](/ss/screencapture-odyssey-events-chi-vercel-app-2026-05-09-20_04_35.png)
+![Homepage](public/ss/screencapture-odyssey-events-chi-vercel-app-2026-05-09-20_04_35.png)
 
 ### About Page
 
-![About Page](/ss/screencapture-odyssey-events-chi-vercel-app-about-2026-05-09-20_05_18.png)
+![About Page](public/ss/screencapture-odyssey-events-chi-vercel-app-about-2026-05-09-20_05_18.png)
 
 ### Events Page
 
-![Events Page](/ss/screencapture-odyssey-events-chi-vercel-app-events-2026-05-09-20_05_39.png)
+![Events Page](public/ss/screencapture-odyssey-events-chi-vercel-app-events-2026-05-09-20_05_39.png)
 
 ### Add Event Page
 
-![Add Event Page](/ss/screencapture-odyssey-events-chi-vercel-app-add-event-2026-05-09-20_06_22.png)
+![Add Event Page](public/ss/screencapture-odyssey-events-chi-vercel-app-add-event-2026-05-09-20_06_22.png)
 
 ### Blog Page
 
-![Blog Page](/ss/screencapture-odyssey-events-chi-vercel-app-blog-2026-05-09-20_06_04.png)
+![Blog Page](public/ss/screencapture-odyssey-events-chi-vercel-app-blog-2026-05-09-20_06_04.png)
 
 ### Contact Page
 
-![Contact Page](/ss/screencapture-odyssey-events-chi-vercel-app-contact-2026-05-09-20_05_53.png)
+![Contact Page](public/ss/screencapture-odyssey-events-chi-vercel-app-contact-2026-05-09-20_05_53.png)
 
 ### Login Page
 
-![Login Page](/ss/screencapture-odyssey-events-chi-vercel-app-login-2026-05-09-20_04_53.png)
+![Login Page](public/ss/screencapture-odyssey-events-chi-vercel-app-login-2026-05-09-20_04_53.png)
 
 ### Register Page
 
-![Register Page](/ss/screencapture-odyssey-events-chi-vercel-app-register-2026-05-09-20_05_04.png)
+![Register Page](public/ss/screencapture-odyssey-events-chi-vercel-app-register-2026-05-09-20_05_04.png)
 
 ---
 
-## �🔗 Relevant Links
+## ��🔗 Relevant Links
 
 - 🌐 Live Project: https://odyssey-events-chi.vercel.app
 - 📁 Repository: https://github.com/sohananazneen/odyssey-events.git
