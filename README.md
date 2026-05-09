@@ -115,7 +115,7 @@ NEXT_PUBLIC_APP_ID=your_app_id
 
 ### Manage Event Page
 
-![Add Event Page](public/ss/screencapture-odyssey-events-chi-vercel-app-manage-events-2026-05-09-20_50_03)
+![Add Event Page](public/ss/screencapture-odyssey-events-chi-vercel-app-manage-events-2026-05-09-20_50_03.png)
 
 ### Blog Page
 
