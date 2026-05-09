@@ -6,14 +6,10 @@ Odyssey Events is a modern event management platform built with Next.js. It allo
 
 ---
 
-## 🔑 Demo Credentials
+## ��🔗 Relevant Links
 
-Use the following credentials to test the application:
-
-- 📧 Email: **[demo@odyssey.com](mailto:demo@odyssey.com)**
-- 🔒 Password: **123456**
-
-> ⚠️ Note: You can also sign in using **Google Authentication**
+- 🌐 Live Project: https://odyssey-events-chi.vercel.app
+- 📁 Repository: https://github.com/sohananazneen/odyssey-events.git
 
 ---
 
@@ -132,13 +128,6 @@ NEXT_PUBLIC_APP_ID=your_app_id
 ### Register Page
 
 ![Register Page](public/ss/screencapture-odyssey-events-chi-vercel-app-register-2026-05-09-20_05_04.png)
-
----
-
-## ��🔗 Relevant Links
-
-- 🌐 Live Project: https://odyssey-events-chi.vercel.app
-- 📁 Repository: https://github.com/sohananazneen/odyssey-events.git
 
 ---
 
